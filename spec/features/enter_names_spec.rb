@@ -1,15 +1,6 @@
 
-# feature "Testing infrastructure" do
-#   scenario "checks if homepage says 'Testing infrastructure working!'" do
-#     visit '/'
-#     expect(page).to have_content('Testing infrastructure working!')
-#   end
-# end
-
-
-
-feature "fill in names in form" do
-  scenario "checks that players can fill in their names on a form and submit that form" do
+feature "Enter names" do
+  scenario "submitting names" do
     visit '/'
     sign_in_and_play
     # visit '/names-submit'
