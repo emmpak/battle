@@ -14,12 +14,12 @@ feature "fill in names in form" do
     sign_in_and_play
     # visit '/names-submit'
     # save_and_open_page
-    expect(page).to have_content('Skeeter vs Hutchkins BATTLE BEGINS!!!')
+    expect(page).to have_content('Volkswagen vs Polar Bear BATTLE BEGINS!!!')
   end
 
   scenario "lets Player 1 see Player 2's hit points" do
     sign_in_and_play
-    expect(page).to have_content("Hutchkins: 100HP")
+    expect(page).to have_content("Volkswagen: 100HP")
   end
 
   scenario "lets Player 1 see Player 2's health bar" do
