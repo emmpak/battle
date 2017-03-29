@@ -7,10 +7,6 @@ class Battle < Sinatra::Base
 
   enable :sessions
 
-  def initialize
-    @p1_health = 100
-    @p2_health = 100
-  end
   get "/" do
     erb(:players_form)
   end
