@@ -1,7 +1,33 @@
+<style>
+  section {
+    width: 100%
+  }
+
+  #player1 {
+    max-width: 50%;
+    float: left
+  }
+
+  #player2 {
+    max-width: 50%
+  }
+
+</style>
+
+
 <h1> <%= @player1 %> vs <%= @player2 %> BATTLE BEGINS!!!</h1>
 
-<div>
-  <div><%= @player2 %>: 100HP</div>
+<section width="100%">
+<div id="player1" style="width:40%">
+  <span><%= @player2 %>: 100HP</span>
   <progress id='health_bar_p2' value='100' max='100'></progress>
   <div></div>
+  <img src="https://i0.wp.com/hennessysview.com/wp-content/uploads/2015/12/polar-bear-iceberg.jpg?ssl=1" alt="polar bear" height="200"/>
+  <div style="padding:10"></div>
+  <button type='button' id="emissions">Cheat emissions test!</button>
 </div>
+<span id="player2" style="width:40%">
+  <img src="http://blog.caranddriver.com/wp-content/uploads/2015/10/Volkswagen-HQ-clouds-e1446151067853-626x381.jpg" alt="gas" height="150" width="200"/>
+
+</span>
+</section>
