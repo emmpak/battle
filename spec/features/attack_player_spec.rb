@@ -8,7 +8,9 @@ feature 'attack player' do
   scenario 'reduce HP by 12' do
     sign_in_and_play
     click_button "Cheat emissions test!"
-    expect(page).to have_content "Polar Bear HP: 88"
+    click_link "OK"
+    expect(page).not_to have_content "Polar Bear: 100HP"
+    expect(page).to have_content "Polar Bear: 88HP"
   end
 
 end
