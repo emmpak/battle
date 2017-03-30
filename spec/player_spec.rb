@@ -12,12 +12,9 @@ describe Player do
     expect(volkswagen.hp).to eq Player::DEFAULT_HP
   end
 
-  it 'attacks the polar bear' do
-    expect(polar_bear).to receive(:reduce_hp)
-    volkswagen.attack(polar_bear)
-  end
-
-  it "reduces polar bear's #{Player::DEFAULT_DAMAGE}hp" do
-    expect{volkswagen.attack(polar_bear)}.to change {polar_bear.hp}.by -Player::DEFAULT_DAMAGE
+  describe '#reduce_hp' do
+    it "reduces polar bear's #{Player::DEFAULT_DAMAGE}hp" do
+      expect{ polar_bear.reduce_hp }.to change {polar_bear.hp}.by -Player::DEFAULT_DAMAGE
+    end
   end
 end
