@@ -22,9 +22,15 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
+  post '/switch' do
+    $attacker = params.keys.last
+    redirect '/attack'
+  end
+
   get '/attack' do
     @player1 = $game.player1
     @player2 = $game.player2
+    @attacker = $attacker
     $game.attack(@player2)
     erb :attack
   end
