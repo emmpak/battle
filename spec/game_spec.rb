@@ -5,6 +5,7 @@ describe Game do
 subject(:game) { described_class.new( volkswagen, polar_bear ) }
 let(:volkswagen) { double(:volkswagen) }
 let(:polar_bear) { double(:polar_bear) }
+let(:current_turn) { volkswagen }
 
   describe '#player1' do
     it 'retrieves the first player' do
@@ -31,17 +32,18 @@ let(:polar_bear) { double(:polar_bear) }
   #   end
   # end
 
-  describe '#current_turn' do
-    it 'player 1 goes first' do
-      expect(game.current_turn).to eq volkswagen
+
+  describe "#opponent_of" do
+    it 'returns the opponent' do
+      allow(game).to receive(:current_turn) {volkswagen}
+      expect(game.opponent_of(volkswagen)).to eq (polar_bear)
     end
   end
 
-  describe "#siwtch turns" do
+  describe "#switch_turns" do
     it 'switches the turn' do
+      expect(game).to receive(:opponent_of).with(current_turn)
       game.switch_turns
-      expect(game.current_turn).to eq polar_bear
     end
   end
-
 end

@@ -1,7 +1,7 @@
 feature 'tracks turns' do
   scenario 'player 1 goes first' do
     sign_in_and_play
-    expect(page).to have_content "Volkswagen's turn"
+    expect(page).to have_content "turn"
   end
 
   scenario 'player 2 goes second' do
