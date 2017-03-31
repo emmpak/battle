@@ -1,5 +1,11 @@
-<%= @game.player1.name %> used Cheat Emissions. It's super effective! <%= @game.player2.name %> -12 HP.
-</p>
-<%= @game.player2.name %> HP: <%= @game.player2.hp %>
-</p>
-<a href="/play">OK</a>
+<% if @game.current_turn == @game.player1 %>
+  <%= @game.player1.name %> used Cheat Emissions. It's super effective! <%= @game.player2.name %> -12 HP.
+  </p>
+<% else %>
+  <%= @game.player2.name %>'s social media gets attention and VW is fined. <%= @game.player1.name %> -12 HP.
+  </p>
+<% end %>
+<%= @game.oponent_of(@game.current_turn).name %> HP: <%= @game.@game.oponent_of(@game.current_turn).hp %>
+<form action="/switch_turns" method="post">
+  <input type="submit" value="OK">
+</form>
