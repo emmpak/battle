@@ -19,7 +19,7 @@ feature 'attack player' do
     expect(page).to have_content "Polar Bear: 88HP"
   end
 
-  xscenario 'reduce HP by 12' do
+  scenario 'reduce HP by 12' do
     sign_in_and_play
     click_button "Lick paw"
     click_link "OK"
