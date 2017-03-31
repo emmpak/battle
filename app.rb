@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/game'
+require_relative './lib/polar_bear'
 
 class Battle < Sinatra::Base
 
@@ -10,24 +11,26 @@ class Battle < Sinatra::Base
     erb(:index)
   end
 
+  before '/*' do
+    @game = Game.access
+  end
+
   post "/names" do
-    $game = Game.new( Player.new(params["Player 1"]), Player.new(params["Player 2"]))
+    @game = Game.instance( Player.new(params["Player 1"]), PolarBear.new(params["Player 2"]))
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
     erb(:play)
   end
 
   get '/attack' do
-    @game = $game
     @game.attack(@game.opponent_of(@game.current_turn))
     erb(:attack)
   end
 
   post '/switch_turns' do
-    $game.switch_turns
+    @game.switch_turns
     redirect '/play'
   end
 

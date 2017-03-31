@@ -6,7 +6,7 @@ attr_reader :players, :current_turn
 
   def initialize(player1, player2)
     @players = [player1, player2]
-    @current_turn = players.sample
+    @current_turn = player1
   end
 
   def player1
@@ -17,7 +17,7 @@ attr_reader :players, :current_turn
     @players.last
   end
 
-  def attack(player)
+  def attack(player,amount)
     player.reduce_hp
   end
 
@@ -27,6 +27,14 @@ attr_reader :players, :current_turn
 
   def opponent_of(the_player)
     players.select { |player| player != the_player }.first
+  end
+
+  def self.instance(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.access
+    @game
   end
 
 end

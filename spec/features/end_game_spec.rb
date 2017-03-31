@@ -12,7 +12,7 @@ feature "the game can end, in which a player wins and loses" do
     expect(page).to have_content("Volkswagen wins!")
   end
 
-  scenario "player 2 wins the game, player 1 loses" do
+  xscenario "player 2 wins the game, player 1 loses" do
     sign_in_and_play
     # current_turn = "Polar Bear"
     8.times {

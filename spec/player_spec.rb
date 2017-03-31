@@ -4,6 +4,7 @@ describe Player do
   subject(:volkswagen) {described_class.new("volkswagen")}
   subject(:polar_bear) { described_class.new("polar bear") }
 
+
   it "returns the name of the player" do
     expect(volkswagen.name).to eq "volkswagen"
   end

@@ -13,7 +13,7 @@ feature "Enter names" do
     expect(page).to have_content("Volkswagen: 100HP")
   end
 
-  scenario "lets Player 1 see Player 2's health bar" do
+  xscenario "lets Player 1 see Player 2's health bar" do
     sign_in_and_play
     expect(page).to have_css("progress#health_bar_p2")
   end
