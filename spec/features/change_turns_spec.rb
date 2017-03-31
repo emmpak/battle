@@ -7,7 +7,7 @@ feature 'tracks turns' do
   scenario 'player 2 goes second' do
     sign_in_and_play
     click_button "Cheat emissions test"
-    click_link "OK"
+    click_button "OK"
     expect(page).not_to have_content "Volkswagen's turn"
     expect(page).to have_content "Polar Bear's turn"
   end
