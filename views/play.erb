@@ -22,7 +22,7 @@
 
 <h1> <%= @game.player1.name %> vs <%= @game.player2.name %> BATTLE BEGINS!!!</h1>
 </p>
-<h2><%= @game.player1.name %>'s turn</h2>
+<h2><%= @game.current_turn.name %>'s turn</h2>
 
 
 <section>
@@ -31,7 +31,7 @@
     <progress id='health_bar_p1' value='100' max='100'></progress>
     <div></div>
     <img src="http://blog.caranddriver.com/wp-content/uploads/2015/10/Volkswagen-HQ-clouds-e1446151067853-626x381.jpg" alt="gas" height="330" width="400" style="padding-bottom:20"/>
-    <form action="/switch" method="post">
+    <form action="/attack">
       <input type='submit' value="Cheat emissions test!" name="player1_attack">
     </form>
   </div>
@@ -41,7 +41,7 @@
     <progress id='health_bar_p2' value='100' max='100'></progress>
     <div></div>
     <img src="https://i0.wp.com/hennessysview.com/wp-content/uploads/2015/12/polar-bear-iceberg.jpg?ssl=1" alt="polar bear" height="350" style="padding-bottom:20"/>
-    <form action="/switch" method="post">
+    <form action="/attack">
       <input type='submit' value="Lick paw" name="player2_attack">
     </form>
   </div>
